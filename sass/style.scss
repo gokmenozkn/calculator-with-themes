@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700&display=swap');
+$font-family: 'Spartan', sans-serif; // Font
+$font-weight: 700; // weight
+
+// Theme 2
+// Backgrounds
+$light-gray: hsl(0, 0%, 90%); // main background
+$grayish-red: hsl(0, 5%, 81%); // toggle background, keypad background
+$verylight-gray: hsl(0, 0%, 93%); // screen background
+$dark-moderate-cyan: hsl(185, 42%, 37%); // key backgr.
+$very-dark-cyan: hsl(185, 58%, 25%); // key shadow
+$orange: hsl(25, 98%, 40%); // key background, toggle
+$dark-orange: hsl(25, 99%, 27%); // key shadow
+$light-grayish-yellow: hsl(45, 7%, 89%); // key background
+$dark-grayish-orange: hsl(35, 11%, 61%); // key shadow
+
+// Text
+$very-darkgrayish-yellow: hsl(60, 10%, 19%);
+$white: #fff; // text
+
+*, 
+::before, ::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  background: $light-gray;
+  font-family: $font-family;
+  font-weight: $font-weight;
+  height: 100vh;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.main {
+  max-width: 620px;
+  margin: 0 auto;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+    justify-content: space-between;
+    color: $very-darkgrayish-yellow;
+    
+    &__title {
+      font-size: 24px;
+    }
+    &__theme {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 150px;
+      font-size: 12px;
+
+      .theme {
+        display: flex;
+        flex: 0 0 75%;
+        flex-wrap: wrap;
+        width: 100%;
+        padding-left: 2em;
+
+        .numbers {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          width: 100%;
+        }
+        .bar {
+          background-color: $grayish-red;
+          width: 100%;
+          padding: .3em 0;
+          border-radius: 1em;
+          display: flex;
+          justify-content: space-around;
+
+          .circle {
+            width: 15px;
+            height: 15px;
+            cursor: pointer;
+            border-radius: 50%;
+          }
+          .active {
+            background-color: $orange;
+          }
+        }
+      }
+    }
+  }
+  &__screen {
+    width: 100%;
+    margin-bottom: 2em;
+    input {
+      background-color: hsl(0, 0%, 93%);
+      width: 100%;
+      height: 100%;
+      padding: 1em .5em;
+      font-size: 3rem;
+      font-weight: $font-weight;
+      font-family: $font-family;
+      text-align: right;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      word-break: break-all;
+      border: none;
+      outline: none;
+      border-radius: 5px;
+    }
+  }
+  &__body {
+    background-color: $grayish-red;
+    padding: 1.3em 1.5em;
+    border-radius: 5px;
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      button {
+        width: 22%;
+        padding: .3em 1.2em;
+        margin: 10px 0;
+        border-radius: .3em;
+        font-size: 32px;
+        font-weight: $font-weight;
+        font-family: inherit;
+        background: $light-grayish-yellow;
+        border: none;
+        box-shadow: 0 4px $dark-grayish-orange;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .reset {
+        width: 48%;
+        background-color: $dark-moderate-cyan;
+        color: $white;
+        box-shadow: 0 4px $very-dark-cyan;
+        text-transform: uppercase;
+        font-size: 20px;
+      }
+      .equal {
+        width: 48%;
+        color: $white;
+        background: $orange;
+        box-shadow: 0 4px $dark-orange;
+      }
+      .delete {
+        background-color: $dark-moderate-cyan;
+        color: $white;
+        box-shadow: 0 4px $very-dark-cyan;
+        text-transform: uppercase;
+        font-size: 20px;
+      }
+    }
+  }
+}
